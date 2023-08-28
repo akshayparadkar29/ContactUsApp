@@ -1,0 +1,24 @@
+<!-- src/app/contact-us/contact-us.component.html -->
+<div>
+    <h2>Contact Us</h2>
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" ngModel required />
+      </div>
+      <div>
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" ngModel required />
+      </div>
+      <div>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" ngModel required />
+      </div>
+      <div>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" ngModel required></textarea>
+      </div>
+      <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+    </form>
+  </div>
+  
