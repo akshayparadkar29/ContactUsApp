@@ -18,6 +18,11 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" ngModel required></textarea>
       </div>
+      <div>
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" ngModel appPhoneNumber required />
+        <div *ngIf="contactForm.controls.mobile?.errors?.phoneNumber">Invalid phone number</div>
+      </div>
       <button type="submit" [disabled]="contactForm.invalid">Submit</button>
     </form>
   </div>
